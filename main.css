@@ -1,3 +1,8 @@
+:root {
+  --hover-opacity: 0;
+  --hover-color: #ff9b86;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -108,11 +113,42 @@ main {
   background-color: #ec755d;
   border-radius: 5px;
   height: 50px;
-  width: 50.36496353149414px;
+  width: 50.4px;
+  position: relative;
+}
+
+.bar-h {
+  background-color: #76b5bc;
+}
+
+.bar:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+}
+
+.bar-h:hover {
+  background-color: #b4e0e5;
 }
 
 .bar-info {
   font-size: 15px;
   color: #92857a;
   text-align: center;
+}
+
+.bar::before {
+  width: 75px;
+  height: 40px;
+  content: attr(data-amount);
+  background-color: #382314;
+  font-size: 18px;
+  color: #fffbf6;
+  position: absolute;
+  top: -48px;
+  left: -12px;
+  border-radius: 5px;
+  opacity: var(--hover-opacity);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
