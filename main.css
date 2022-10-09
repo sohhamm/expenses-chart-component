@@ -19,7 +19,8 @@ body {
 }
 
 main {
-  width: 540px;
+  max-width: 540px;
+  width: 100%;
   height: 660px;
 }
 
@@ -46,7 +47,7 @@ main {
 }
 
 .bottom-box {
-  width: 540px;
+  width: 100%;
   height: 511px;
   background-color: #fffbf6;
   border-radius: 20px;
@@ -84,7 +85,6 @@ main {
   font-size: 48px;
   color: #382314;
   margin-bottom: -8px;
-  line-height: 62px;
 }
 
 .exp-percent {
@@ -102,17 +102,16 @@ main {
 .chart {
   margin-bottom: 32px;
   height: 178px;
-  width: 460.5px;
+  width: 100%;
   display: flex;
-  column-gap: 17.9px;
   align-items: flex-end;
+  justify-content: space-between;
 }
 
 .bar {
   margin-bottom: 8px;
   background-color: #ec755d;
   border-radius: 5px;
-  height: 50px;
   width: 50.4px;
   position: relative;
 }
@@ -151,4 +150,83 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 550px) {
+  main {
+    height: auto;
+    padding: 0 16px;
+  }
+
+  .top-box {
+    border-radius: 10px;
+    padding: 22px 20px;
+    margin-bottom: 16px;
+  }
+
+  .bal-title {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .bal {
+    font-size: 24px;
+  }
+
+  .bottom-box {
+    height: auto;
+    border-radius: 10px;
+    padding: 24px 20px;
+  }
+
+  .bottom-box > h1 {
+    font-size: 24px;
+    margin-bottom: 52px;
+  }
+
+  .divider {
+    margin-bottom: 24px;
+  }
+
+  .summary-title {
+    font-size: 15px;
+  }
+
+  .exp {
+    font-size: 30px;
+    margin-bottom: -1px;
+  }
+
+  .exp-percent {
+    font-size: 15px;
+  }
+
+  .exp-info {
+    font-size: 15px;
+  }
+
+  .chart {
+    margin-bottom: 24px;
+    height: 177px;
+    width: 100%;
+  }
+
+  .bar {
+    margin-bottom: 11px;
+    border-radius: 3px;
+    width: 33px;
+  }
+
+  .bar-info {
+    font-size: 12px;
+  }
+
+  .bar::before {
+    width: 50px;
+    height: 30px;
+    font-size: 12px;
+    top: -35px;
+    left: -8.5px;
+    border-radius: 3px;
+  }
 }

@@ -5,16 +5,16 @@ const chart = document.querySelector('.chart')
 const renderChart = () => {
   const max = getHighestExpense(expenses)
 
-  const getBase = data => `
+  const getBar = expense => `
   <div class="bar-box">
-    <div class="bar ${max === data.amount ? 'bar-h' : ''}" data-amount="$${
-    data.amount
-  }" style="height:${data.amount * 3}px;"></div>
-    <p class="bar-info">${data.day}</p>
+    <div class="bar ${max === expense.amount ? 'bar-h' : ''}" data-amount="$${
+    expense.amount
+  }" style="height:${expense.amount * 3}px;"></div>
+    <p class="bar-info">${expense.day}</p>
   </div>
   `
 
-  const chartHtmlStr = expenses.map(expense => getBase(expense)).join(' ')
+  const chartHtmlStr = expenses.map(expense => getBar(expense)).join(' ')
 
   chart.innerHTML = chartHtmlStr
 
